@@ -18,5 +18,7 @@
 
 # printx()
 
-# load(stats1.RData)
-print(hello world!)
+load("stats1.RData")
+
+print(stem(quakes))
+

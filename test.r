@@ -18,4 +18,5 @@
 
 # printx()
 
-load(stats1.RData)
+# load(stats1.RData)
+print(hello world!)

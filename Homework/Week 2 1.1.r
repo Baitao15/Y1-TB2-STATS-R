@@ -1,0 +1,6 @@
+load('stats1.RData') 
+print(iridium)
+stem(iridium)
+hist(iridium)
+boxplot(iridium)
+plot(iridium)

@@ -18,10 +18,14 @@
 
 # printx()
 
-load("stats1.RData")
+# load("stats1.RData")
 
-print(stem(quakes))
+# print(stem(quakes))
 
-print(stem(quakes, scale=2))
+# print(stem(quakes, scale=2))
 
-
+num1 <- readline(prompt = "Enter a number:")
+num2 <- readline(prompt = "Enter another number:")
+sum <- as.numeric(num1) + as.numeric(num2)
+print("The sum of your numbers is")
+print(as.character(sum))

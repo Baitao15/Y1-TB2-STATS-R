@@ -22,3 +22,6 @@ load("stats1.RData")
 
 print(stem(quakes))
 
+print(stem(quakes, scale=2))
+
+

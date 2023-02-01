@@ -1,6 +1,12 @@
 load('stats1.RData') 
 print(iridium)
 stem(iridium)
+x11(width = 24, height = 8)
 hist(iridium)
-boxplot(iridium)
+x11(width = 24, height = 8)
+boxplot(iridium, horizontal = TRUE)
+x11(width = 24, height = 8)
 plot(iridium)
+
+median(iridium)
+mean(iridium)

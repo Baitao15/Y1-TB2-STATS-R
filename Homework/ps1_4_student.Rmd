@@ -1,0 +1,20 @@
+<h1>Statistics Week 2 R Homework Question 1.1</h1>
+Having loaded the Statistics 1 data set into `R`, use `stem(us.temp, scale=4)` to produce a stem-and-leaf plot of the dataset `us.temp`, which gives the mean January temperatures for 60 U.S. metropolitan areas. 
+
+```{r}
+load('C:/.A - Uni/Year 1/Maths/Probability and Stats/Y1-TB2-STATS-R/stats1.RData')
+stem(us.temp)
+```
+
+Use `R` to give a five number summary of the data.
+```{r}
+fivenum(us.temp)
+```
+ 
+By examining the data set directly, comment on any unusual pattern in the data and try to find a plausible explanation. 
+```{r}
+us.temp
+```
+::: {style="font-family:'Courier New'"}
+<br>The maximum value, 19.4<sup>o</sup>C is considerably warm. This could be becuase the data was collected from a metropolitan area in the south of the US which typically experiences warmer temperatures in January.
+:::

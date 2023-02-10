@@ -1,32 +1,111 @@
-In an experiment to investigate the heat of sublimation of iridium, 
-the following 27 measurements were made, listed across the rows in the 
-order they were taken. The data is contained in the Statistics 1 data set `iridium`. 
- 
- 
-```{r} 
-load('stats1.RData') 
-iridium 
-``` 
- 
-### (a) 
-Use the `R` commands `stem`, `hist`, `boxplot`, and `plot` to make a stem-and-leaf plot, a histogram, a boxplot and a plot of the observations in the order they were taken. Print your plots and comment on the overall pattern and any striking features. 
- 
- 
-### (b) 
-Use the `R` commands `median` and `mean` to find the median and the mean.  
-Use `mean` in `R` to see how to compute a trimmed mean. 
- 
-Compute the 10\% and 20\% trimmed means for the iridium data set. 
- 
-Compare how well the the mean and median and trimmed means represent the centre of this dataset. 
- 
- 
-### (c) 
-Use the `R` commands `var` and `sd` to find the sample variance and standard deviation. 
-Use the `R` commands `fivenum` and `summary` to find the hinges and the sample quartiles, and use `R` command `IQR` to find the interquartile range (but see comments on 'Hinges and Quartiles' overleaf). 
-Again, compare how these values represent the spread of the data. 
- 
- 
-### (d) 
-What conclusions do you draw from your plots and numerical summaries? What effect do the outliers have on the numerical and graphical summaries? What would the corresponding results look like if the outliers were removed? 
- 
+<h1>Statistics Week 2 R Homework Question 1.1</h1>
+
+In an experiment to investigate the heat of sublimation of iridium, the
+following 27 measurements were made, listed across the rows in the order
+they were taken. The data is contained in the Statistics 1 data set
+`iridium`.
+
+```{r}
+load('C:/.A - Uni/Year 1/Maths/Probability and Stats/Y1-TB2-STATS-R/stats1.RData')
+labelforaxis=(expression(paste("Enthalpy of Sublimation of Iridium (kJ mol"^"-1", ")")))
+iridium
+```
+
+### (a)
+
+Use the `R` commands `stem`, `hist`, `boxplot`, and `plot` to make a
+stem-and-leaf plot, a histogram, a boxplot and a plot of the
+observations in the order they were taken. Print your plots and comment
+on the overall pattern and any striking features.
+
+```{r}
+
+stem(iridium)
+hist(iridium, xlab = labelforaxis)
+boxplot(iridium, xlab = labelforaxis, horizontal = TRUE)
+plot(iridium, ylab = labelforaxis)
+```
+
+::: {style="font-family:'Courier New'"}
+<br>Overall, the data values are very consistent, with most values being
+very close to 160. <br>There are, however, a few anomalous points.
+:::
+
+### (b)
+
+Use the `R` commands `median` and `mean` to find the median and the
+mean.
+
+```{r}
+median(iridium)
+mean(iridium)
+```
+
+Use `mean` in `R` to see how to compute a trimmed mean.
+
+Compute the 10% and 20% trimmed means for the iridium data set.
+
+```{r}
+mean(iridium, trim=0.1)
+mean(iridium, trim=0.2)
+```
+
+Compare how well the the mean and median and trimmed means represent the
+centre of this dataset.
+
+::: {style="font-family:'Courier New'"}
+<br>As there are a few extreme values, the mean is likely to be the
+least accurate representation of the centre of the dataset. The median,
+10% and 20% trimmed means, all seem to be fairly good representations of
+the centre of the dataset.
+:::
+
+### (c)
+
+Use the `R` commands `var` and `sd` to find the sample variance and
+standard deviation.
+
+```{r}
+var(iridium)
+sd(iridium)
+```
+
+Use the `R` commands `fivenum` and `summary` to find the hinges and the
+sample quartiles, and use `R` command `IQR` to find the interquartile
+range (but see comments on 'Hinges and Quartiles' overleaf).
+
+```{r}
+fivenum(iridium)
+summary(iridium)
+```
+
+::: {style="font-family:'Courier New'"}
+So: <br>H<sub>1</sub>=159.50 <br>H<sub>3</sub>=160.25
+<br>Q<sub>1</sub>=159.5 <br>Q<sub>3</sub>=160.2
+:::
+
+```{r}
+IQR(iridium)
+```
+
+Again, compare how these values represent the spread of the data.
+
+::: {style="font-family:'Courier New'"}
+<br>The data is fairly consistent, in particular it has a very low IQR.
+However, since there are some extreme values, the variance and standard
+distribution are quite large.
+:::
+
+### (d)
+
+What conclusions do you draw from your plots and numerical summaries?
+What effect do the outliers have on the numerical and graphical
+summaries? What would the corresponding results look like if the
+outliers were removed?
+
+::: {style="font-family:'Courier New'"}
+<br>The enthalpy of sublimation of iridium is most likely to be about
+159.8 kJ mol<sup>-1</sup> (the median of the data set). <br>Since the
+data is negatively skewed, the outliers lead to a smaller mean. <br>If
+the outliers were removed, the mean would be larger.
+:::

@@ -10,6 +10,11 @@ Use `R` to give a five number summary of the data.
 ```{r}
 fivenum(us.temp)
 ```
+
+```{r}
+
+```
+
  
 By examining the data set directly, comment on any unusual pattern in the data and try to find a plausible explanation. 
 ```{r}

@@ -19,8 +19,31 @@
 # printx()
 
 load("stats1.RData")
+observed = sort(lamp)
+expected = sort(rexp(25, 0.27225))
+xsquared = 0
+i=1
+while(i<26){
+    value=((observed[i]-expected[i])^2/expected[i])
+    xsquared=xsquared+value
+    #print(value)
+    i=i+1
+}
+print(xsquared)
+print(qchisq(0.05, 24))
 
-prod('lamp')
+
+#print(cor(sort(x), sort(y), method = "pearson"))
+
+# print(sum(lamp))
+# print(sum(lamp)/25)
+# print(mean(lamp))
+# print(qchisq(0.025, 50))
+# print(pchisq(32.35736, 50))
+# print(qchisq(0.975, 50))
+# print(pchisq(71.4202, 50))
+# print(median(lamp))
+
 
 # print(stem(quakes))
 

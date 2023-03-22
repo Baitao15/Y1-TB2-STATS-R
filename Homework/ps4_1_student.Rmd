@@ -1,0 +1,37 @@
+The methods and `R` commands required for this question are similar to those in the notes for the simulation from the Uniform(0,1) distribution, but with the obvious adjustments to the names and to the formulae for the various estimators. 
+ 
+Use the `R` commands below to construct a matrix  `xsamples` with 1000 rows and 10 columns. The 10 data values in each row can be thought of as  a random sample of size 10 from an Exp($\theta$) distribution with rate $\theta=1$ and the 1000 rows can be thought of as $B=1000$ independent repeated samples. 
+ 
+```{r} 
+xvalues = rexp(10000, rate=1) 
+xsamples = matrix(xvalues, nrow=1000)
+``` 
+ 
+### (a) 
+Calculate the maximum likelihood estimate $\widehat{\theta} = 1/\overline{x}$ for each sample, and plot a histogram of the relative frequencies of the $1000$ estimates of $\theta$ obtained. 
+
+```{r}
+estlist = list()
+for (i in 1:1000){
+  est = 1/(mean(xsamples[i,]))
+  estlist = c(estlist, est)
+}
+estimates_of_theta <- unlist(estlist, use.names = FALSE)
+hist(estimates_of_theta)
+```
+
+ 
+### (b) 
+You may *assume* that the Exp($\theta$) distribution has median $\log(2)/\theta$. For each of the $B=1000$ samples generated above, calculate both the sample median and the maximum likelihood estimate of the population median $\tau(\theta) = \log(2)/\theta$. 
+ 
+Produce a single plot containing a boxplot of the $1000$ values of the sample median and a boxplot of the $1000$ values of the mle of the population median. 
+ 
+ 
+### (c) 
+Since the observations above were drawn from a population distribution with $\theta = 1$, add a horizontal line at height $\log(2)$ to your plot showing the true value of the median for this population and use it to compare the sample median and the MLE as estimators of the population median. 
+ 
+ 
+ 
+### (d) 
+Calculate the mean and the variance of the $1000$ values of the sample median and the $1000$ values of the maximum likelihood estimate of the population median and use these numerical values to compare the bias, variance and mean square error of the two estimators. 
+ 
